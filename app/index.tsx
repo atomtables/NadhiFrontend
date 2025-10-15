@@ -1,9 +1,8 @@
-import "./global.css";
 import {useState} from "react";
-import NoFlood from "./noFlood";
-import YesFlood from "./yesFlood";
-import PossibleFlood from "./possibleFlood";
-import PastFlood from "./pastFlood";
+import NoFlood from "./landingStates/noFlood";
+import YesFlood from "./landingStates/yesFlood";
+import PossibleFlood from "./landingStates/possibleFlood";
+import PastFlood from "./landingStates/pastFlood";
 
 export default function Index() {
     const [floodLevel, setFloodLevel] = useState("noFlood");

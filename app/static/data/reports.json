@@ -1,0 +1,19 @@
+{
+  "locations": [
+    { "latitude": 40.4862, "longitude": -74.4522 },
+    { "latitude": 40.5166, "longitude": -74.3315 },
+    { "latitude": 40.3984, "longitude": -74.5582 },
+    { "latitude": 40.4734, "longitude": -74.3639 },
+    { "latitude": 40.4281, "longitude": -74.4143 },
+    { "latitude": 40.5311, "longitude": -74.2951 },
+    { "latitude": 40.3729, "longitude": -74.5021 },
+    { "latitude": 40.4550, "longitude": -74.4980 },
+    { "latitude": 40.5008, "longitude": -74.3854 },
+    { "latitude": 40.3412, "longitude": -74.5899 },
+    { "latitude": 40.4847, "longitude": -74.4746 },
+    { "latitude": 40.4800, "longitude": -74.4603 },
+    { "latitude": 40.4975, "longitude": -74.4265 },
+    { "latitude": 40.3888, "longitude": -74.5447 },
+    { "latitude": 40.4691, "longitude": -74.3417 }
+  ]
+}
