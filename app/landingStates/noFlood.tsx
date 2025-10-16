@@ -8,26 +8,6 @@ export default function NoFlood({setFloodLevel}: {setFloodLevel: (level: string)
             <DataBox data={"6-7"} desc={"Inches of Rain"} />
             <DataBox data={"6-7"} desc={"Inches of Rain"} />
             <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
-            <DataBox data={"6-7"} desc={"Inches of Rain"} />
             <Text className="text-lg mb-2.5" onPress={() => setFloodLevel("yesFlood")}>Simulate Flooding</Text>
         </Page>
     );

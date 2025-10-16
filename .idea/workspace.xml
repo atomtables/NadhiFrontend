@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a35fc804-9fda-42cd-aaaf-87a67230023b" name="Changes" comment="Change README.md File">
-      <change afterPath="$PROJECT_DIR$/app/components/NavigationBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Row.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/CameraOverlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Icon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/camera.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NavigationBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/landingStates/pastFlood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/landingStates/pastFlood.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/landingStates/noFlood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/landingStates/noFlood.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/landingStates/yesFlood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/landingStates/yesFlood.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,32 +57,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.localhost:8081.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "React Native.Android.executor": "Run",
-    "React Native.Unnamed.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/abominablepug/Code/webDevelopment/react/nadhi-frontend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
-    "ts.external.directory.path": "/home/abominablepug/Code/webDevelopment/react/nadhi-frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.localhost:8081.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;React Native.Android.executor&quot;: &quot;Run&quot;,
+    &quot;React Native.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/abominablepug/Code/webDevelopment/react/nadhi-frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/abominablepug/Code/webDevelopment/react/nadhi-frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -89,11 +94,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/types" />
-      <recent name="$PROJECT_DIR$/app/landingStates" />
     </key>
   </component>
   <component name="SharedIndexes">

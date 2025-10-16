@@ -51,7 +51,7 @@ export default function Page({ children, status }) {
     }
 
     return (
-        <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', paddingBottom: 56 }} className="bg-gray-900 pt-8">
+        <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', paddingBottom: 56, paddingTop: 40 }} className="bg-gray-900 pt-8">
             <Welcome />
             <View className="w-11/12 h-[50vh] rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20 my-8">
                 <HeatMap />
