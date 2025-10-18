@@ -41,6 +41,14 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Mozilla-Headline.ttf"
+          ]
+        }
       ]
     ],
     "experiments": {

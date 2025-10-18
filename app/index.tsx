@@ -21,7 +21,7 @@ export default function Index() {
         );
     } else if (floodLevel === "pastFlood") {
         return (
-            <PastFlood floodLevel={floodLevel} setFloodLevel={setFloodLevel} />
+            <PastFlood setFloodLevel={setFloodLevel} />
         )
     }
     

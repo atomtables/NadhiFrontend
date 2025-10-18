@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a35fc804-9fda-42cd-aaaf-87a67230023b" name="Changes" comment="Change README.md File">
-      <change afterPath="$PROJECT_DIR$/app/components/CameraOverlay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Icon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/camera.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/CloseOverlayButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Overlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/VolunteerFormOverlay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/close.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/NavigationBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/landingStates/noFlood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/landingStates/noFlood.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/CameraOverlay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/CameraOverlay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/HeatMap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/HeatMap.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Welcome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Welcome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/landingStates/pastFlood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/landingStates/pastFlood.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/landingStates/yesFlood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/landingStates/yesFlood.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/MozillaHeadline-VariableFont_wdth,wght.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Mozilla-Headline.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -78,7 +84,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/abominablepug/Code/webDevelopment/react/nadhi-frontend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }

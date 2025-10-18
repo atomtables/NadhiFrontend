@@ -122,7 +122,7 @@ export default function HeatMap() {
     }
 
     return (
-        <MapView style={styles.map} region={region} provider={PROVIDER_GOOGLE} customMapStyle={mapStyle} minZoomLevel={4} maxZoomLevel={14}>
+        <MapView style={styles.map} region={region} provider={PROVIDER_GOOGLE} customMapStyle={mapStyle} minZoomLevel={4} maxZoomLevel={13}>
             <Heatmap points={points} radius={40} opacity={0.7} />
             {region && (
                 <Marker

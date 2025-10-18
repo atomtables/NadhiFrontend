@@ -1,42 +1,30 @@
-import React, { useRef } from 'react';
-import { View, TouchableOpacity, Text, Animated, Dimensions } from 'react-native';
+import { useRef, useEffect } from 'react';
+import { View, Text, Button } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import Icon from './Icon';
-// import closeIcon from '@/assets/icons/close.png';
+import Overlay from "./Overlay";
+import CloseOverlayButton from "./CloseOverlayButton";
+import closeIcon from '@/assets/icons/close.png';
 import cameraIcon from '@/assets/icons/camera.png';
-
-const { height } = Dimensions.get('window');
 
 export default function CameraOverlay({ isVisible, onClose, onPictureTaken }) {
     const [permission, requestPermission] = useCameraPermissions();
     const cameraRef = useRef(null);
-    const slideAnim = useRef(new Animated.Value(height)).current;
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!permission) {
             requestPermission();
         }
     }, [permission]);
 
-    React.useEffect(() => {
-        if (isVisible) {
-            Animated.spring(slideAnim, {
-                toValue: 0,
-                useNativeDriver: true,
-            }).start();
-        } else {
-            Animated.spring(slideAnim, {
-                toValue: height,
-                useNativeDriver: true,
-            }).start();
-        }
-    }, [isVisible]);
-
     const handleTakePicture = async () => {
         if (cameraRef.current) {
-            const photo = await cameraRef.current.takePictureAsync();
-            onPictureTaken(photo);
-            onClose();
+            try {
+                const photo = await cameraRef.current.takePictureAsync();
+                onPictureTaken(photo);
+            } catch (e) {
+                console.error("Failed to take picture:", e);
+            }
         }
     };
 
@@ -54,27 +42,15 @@ export default function CameraOverlay({ isVisible, onClose, onPictureTaken }) {
     }
     
     return (
-        <Animated.View
-            style={{
-                transform: [{ translateY: slideAnim }],
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: '100%',
-                backgroundColor: 'black',
-            }}
-        >
-            <CameraView style={{ flex: 1 }} ref={cameraRef}>
+        <Overlay isVisible={isVisible}>
+            <CameraView style={{ flex: 1 }} ref={cameraRef} />
+
+            <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'transparent' }} pointerEvents="box-none">
                 <View className="flex-1 justify-end items-center mb-10">
-                    <TouchableOpacity onPress={handleTakePicture}>
-                        <Icon image={cameraIcon} size={48} />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={onClose} className="absolute top-16 right-4">
-                         <Icon image={cameraIcon} size={24} />
-                    </TouchableOpacity>
+                    <Icon image={cameraIcon} size={48} onPress={handleTakePicture} />
                 </View>
-            </CameraView>
-        </Animated.View>
+                <CloseOverlayButton closeFunction={onClose} icon={closeIcon} />
+            </View>
+        </Overlay>
     );
 }
