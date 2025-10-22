@@ -1,7 +1,7 @@
-import { Image, Pressable, View, Animated } from "react-native";
 import { useRef } from 'react';
+import { Animated, Image, Pressable } from "react-native";
 
-export default function Icon({ image, onPress, size = 24 }) {
+export default function Icon({ image, onPress, size = 24 }: { image: any; onPress: () => void; size?: number }) {
     const scaleAnim = useRef(new Animated.Value(1)).current;
 
     const handlePressIn = () => {

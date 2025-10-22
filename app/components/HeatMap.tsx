@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, ActivityIndicator, View } from 'react-native';
-import MapView, { Heatmap, Region, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import getCurrentLocation from '@/app/components/getLocation';
 import pointsData from '@/app/static/data/reports.json';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import MapView, { Heatmap, Marker, PROVIDER_GOOGLE, Region } from 'react-native-maps';
 
 // A modern, dark-themed map style
 const mapStyle = [
@@ -122,7 +122,7 @@ export default function HeatMap() {
     }
 
     return (
-        <MapView style={styles.map} region={region} provider={PROVIDER_GOOGLE} customMapStyle={mapStyle} minZoomLevel={4} maxZoomLevel={13}>
+        <MapView style={styles.map} region={region!} provider={PROVIDER_GOOGLE} customMapStyle={mapStyle} minZoomLevel={4} maxZoomLevel={13}>
             <Heatmap points={points} radius={40} opacity={0.7} />
             {region && (
                 <Marker

@@ -3,7 +3,7 @@ import { Animated, Dimensions } from "react-native";
 
 const { height } = Dimensions.get('window');
 
-export default function Overlay({ children, isVisible }) {
+export default function Overlay({ children, isVisible }: {children: React.ReactNode, isVisible: boolean}) {
     const slideAnim = useRef(new Animated.Value(height)).current;
 
     useEffect(() => {

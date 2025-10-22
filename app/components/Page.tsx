@@ -1,15 +1,15 @@
-import Welcome from '@/app/components/Welcome';
-import HeatMap from '@/app/components/HeatMap';
-import { ScrollView, View, Text } from "react-native";
 import Column from '@/app/components/Column';
+import HeatMap from '@/app/components/HeatMap';
 import Row from '@/app/components/Row';
+import Welcome from '@/app/components/Welcome';
 import React from "react";
+import { ScrollView, Text, View } from "react-native";
 
-export default function Page({ children, status }) {
+export default function Page({ children, status }: { children: React.ReactNode; status: string }) {
     const childrenArray = React.Children.toArray(children);
-    let firstGroup = [];
-    let secondGroup = [];
-    let thirdGroup = [];
+    let firstGroup: any[] = [];
+    let secondGroup: any[] = [];
+    let thirdGroup: any[] = [];
 
     childrenArray.forEach((child, index) => {
         if (!childrenArray[index + 1] && index % 2 === 0) {
@@ -53,7 +53,7 @@ export default function Page({ children, status }) {
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', paddingBottom: 56, paddingTop: 40 }} className="bg-gray-900 pt-8">
             <Welcome />
-            <View className="w-11/12 h-[50vh] rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20 my-8">
+            <View className="w-11/12 h-60 rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20 mb-8">
                 <HeatMap />
             </View>
             <Text className="text-3xl font-bold text-cyan-400 animate-pulse">{status}</Text>

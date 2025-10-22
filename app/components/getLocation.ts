@@ -1,6 +1,6 @@
+import { Location } from '@/types/types';
 import { PermissionsAndroid, Platform } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
-import Location from '@/types/types';
 
 /**
  * Requests location permission from the user.
