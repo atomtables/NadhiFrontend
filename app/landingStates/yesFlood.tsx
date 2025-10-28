@@ -1,11 +1,11 @@
-import { View, Text, Alert } from 'react-native';
-import Page from '@/app/components/Page';
+import CameraOverlay from '@/app/components/CameraOverlay';
 import DataBox from '@/app/components/DataBox';
-import NavigationBar from "@/app/components/NavigationBar";
 import Icon from '@/app/components/Icon';
+import NavigationBar from "@/app/components/NavigationBar";
+import Page from '@/app/components/Page';
 import camera from '@/assets/icons/camera.png';
 import { useState } from "react";
-import CameraOverlay from '@/app/components/CameraOverlay';
+import { Text } from 'react-native';
 
 export default function YesFlood({setFloodLevel}: {setFloodLevel: (level: string) => void}) {
     const [cameraStatus, setCameraStatus] = useState(false);
@@ -21,9 +21,9 @@ export default function YesFlood({setFloodLevel}: {setFloodLevel: (level: string
 
     return (
         <>
-            <Page status={"Flood Detected"} bar={true}>
+            <Page status={"Flood Detected"}>
                 <DataBox data={"6-7"} desc={"Inches of Rain"} />
-                <Text className="text-lg mb-2.5" onPress={() => setFloodLevel("possibleFlood")}>Simulate Flooding</Text>
+                <Text className="text-base text-gray-400 mb-2.5" onPress={() => setFloodLevel("possibleFlood")}>Simulate Flooding</Text>
             </Page>
             <NavigationBar>
                 <Icon image={camera} size={32} onPress={handleCameraPress} />

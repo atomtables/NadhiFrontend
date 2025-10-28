@@ -29,7 +29,7 @@ export default function Overlay({ children, isVisible }: {children: React.ReactN
                 left: 0,
                 right: 0,
                 height: '100%',
-                backgroundColor: 'black',
+                backgroundColor: 'rgba(0, 0, 0, 0.95)',
             }}
         >
             {children}

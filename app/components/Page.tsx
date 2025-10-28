@@ -3,7 +3,7 @@ import HeatMap from '@/app/components/HeatMap';
 import Row from '@/app/components/Row';
 import Welcome from '@/app/components/Welcome';
 import React from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, View } from "react-native";
 
 export default function Page({ children, status }: { children: React.ReactNode; status: string }) {
     const childrenArray = React.Children.toArray(children);
@@ -51,13 +51,15 @@ export default function Page({ children, status }: { children: React.ReactNode; 
     }
 
     return (
-        <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', paddingBottom: 56, paddingTop: 40 }} className="bg-gray-900 pt-8">
+        <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', paddingBottom: 56, paddingTop: 40 }} className="bg-black pt-8">
             <Welcome />
-            <View className="w-11/12 h-60 rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20 mb-8">
+            <View 
+                className="w-11/12 h-60 rounded-3xl overflow-hidden mb-6 border border-white/10"
+                style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
+            >
                 <HeatMap />
             </View>
-            <Text className="text-3xl font-bold text-cyan-400 animate-pulse">{status}</Text>
-            <View className="w-full items-center mt-4">
+            <View className="w-full items-center mt-2">
                 {columnNumber()}
             </View>
         </ScrollView>

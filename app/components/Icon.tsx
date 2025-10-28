@@ -22,7 +22,10 @@ export default function Icon({ image, onPress, size = 24 }: { image: any; onPres
 
     return (
         <Pressable onPress={onPress} onPressIn={handlePressIn} onPressOut={handlePressOut}>
-            <Animated.View style={{ transform: [{ scale: scaleAnim }] }} className="bg-gray-800 rounded-full shadow-lg shadow-cyan-500/20 items-center justify-center aspect-square p-4">
+            <Animated.View 
+                style={{ transform: [{ scale: scaleAnim }], backgroundColor: 'rgba(255, 255, 255, 0.1)' }} 
+                className="rounded-full items-center justify-center aspect-square p-4 border border-white/10"
+            >
                 <Image source={image} style={{ width: size, height: size }} className={`duration-300 transform hover:scale-110 hover:ease-in-out`} />
             </Animated.View>
         </Pressable>

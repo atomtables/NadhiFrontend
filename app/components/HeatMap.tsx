@@ -115,8 +115,8 @@ export default function HeatMap() {
 
     if (loading) {
         return (
-            <View className="flex-1 justify-center items-center bg-gray-800">
-                <ActivityIndicator size="large" color="#00ffff" />
+            <View className="flex-1 justify-center items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}>
+                <ActivityIndicator size="large" color="#06b6d4" />
             </View>
         );
     }
