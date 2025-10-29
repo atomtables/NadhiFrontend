@@ -1,8 +1,10 @@
 import getCurrentLocation from '@/app/components/getLocation';
 import pointsData from '@/app/static/data/reports.json';
+import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import MapView, { Circle, PROVIDER_GOOGLE, Region } from 'react-native-maps';
+import Animated, { FadeInDown, ZoomIn } from 'react-native-reanimated';
 
 // A modern, dark-themed map style
 const mapStyle = [
@@ -149,7 +151,8 @@ function aggregatePointsToGrid(points: any[], gridSize = 0.01) {
     return gridCells;
 }
 
-export default function HeatMap() {
+export default function FullScreenMap() {
+    const router = useRouter();
     const [region, setRegion] = useState<Region | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -183,32 +186,105 @@ export default function HeatMap() {
 
     if (loading) {
         return (
-            <View className="flex-1 justify-center items-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}>
+            <View className="flex-1 justify-center items-center bg-black">
                 <ActivityIndicator size="large" color="#06b6d4" />
             </View>
         );
     }
 
     return (
-        <MapView style={styles.map} region={region!} provider={PROVIDER_GOOGLE} customMapStyle={mapStyle}>
-            {/* Render grid cells as circles for smooth, blended appearance */}
-            {/* Sorted by weight so green renders first (bottom), then yellow, then red (top) */}
-            {sortedGridCells.map((cell, index) => (
-                <Circle
-                    key={index}
-                    center={cell.center}
-                    radius={cell.radius}
-                    fillColor={cell.fillColor}
-                    strokeColor={cell.strokeColor}
-                    strokeWidth={2}
-                />
-            ))}
-        </MapView>
+        <>
+            <Animated.View 
+                entering={ZoomIn.duration(400).springify()}
+                style={styles.container}
+            >
+                <MapView 
+                    style={styles.map} 
+                    initialRegion={region!} 
+                    provider={PROVIDER_GOOGLE} 
+                    customMapStyle={mapStyle}
+                    showsUserLocation={true}
+                    showsMyLocationButton={true}
+                    zoomEnabled={true}
+                    scrollEnabled={true}
+                    pitchEnabled={true}
+                    rotateEnabled={true}
+                >
+                    {/* Render grid cells as circles for smooth, blended appearance */}
+                    {/* Sorted by weight so green renders first (bottom), then yellow, then red (top) */}
+                    {sortedGridCells.map((cell, index) => (
+                        <Circle
+                            key={index}
+                            center={cell.center}
+                            radius={cell.radius}
+                            fillColor={cell.fillColor}
+                            strokeColor={cell.strokeColor}
+                            strokeWidth={2}
+                        />
+                    ))}
+                    
+                    {/* {region && (
+                        <Marker
+                            coordinate={{
+                                latitude: region.latitude,
+                                longitude: region.longitude,
+                            }}
+                            title="Your Location"
+                            pinColor="cyan"
+                        />
+                    )} */}
+                </MapView>
+                
+                {/* Close Button - Top Right */}
+                <Animated.View entering={FadeInDown.delay(300).duration(300)} style={styles.closeButton}>
+                    <Pressable 
+                        onPress={() => router.back()}
+                    >
+                        <View 
+                            className="rounded-full items-center justify-center border border-white/20"
+                            style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', width: 52, height: 52 }}
+                        >
+                            <Text className="text-white text-2xl font-semibold">✕</Text>
+                        </View>
+                    </Pressable>
+                </Animated.View>
+
+                {/* Done Button - Top Left */}
+                {/* <Animated.View entering={FadeInDown.delay(300).duration(300)} style={styles.doneButton}>
+                    <Pressable 
+                        onPress={() => router.back()}
+                    >
+                        <View 
+                            className="rounded-full items-center justify-center border border-cyan-400/50"
+                            style={{ backgroundColor: 'rgba(6, 182, 212, 0.15)', paddingHorizontal: 20, paddingVertical: 12 }}
+                        >
+                            <Text className="text-cyan-400 text-base font-semibold">Done</Text>
+                        </View>
+                    </Pressable>
+                </Animated.View> */}
+            </Animated.View>
+        </>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#000',
+    },
     map: {
         flex: 1,
+    },
+    closeButton: {
+        position: 'absolute',
+        top: 60,
+        left: 20,
+        zIndex: 10,
+    },
+    doneButton: {
+        position: 'absolute',
+        top: 60,
+        left: 20,
+        zIndex: 10,
     },
 });

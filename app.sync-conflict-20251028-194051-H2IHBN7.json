@@ -7,26 +7,18 @@
     "icon": "./assets/images/icon.png",
     "scheme": "nadhifrontend",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "owner": "atomtables",
     "ios": {
-      "icon": {
-        "light": "./assets/images/icon.png",
-        "dark": "./assets/images/icon.png",
-        "tinted": "./assets/images/icon.png"
-      },
       "supportsTablet": true,
       "bundleIdentifier": "com.anonymous.nadhifrontend",
-      "config": {
-        "googleMapsApiKey": "AIzaSyDQ0q81IbLrbny4iuw7DCyBEzjDUa5M4v4"
-      },
-      "entitlements": {
-          "aps-environment": null
-        },
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "NSCameraUsageDescription": "This app uses the camera to take photos of flood conditions.",
         "NSLocationWhenInUseUsageDescription": "This app uses your location to tag photos with geographic data.",
         "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to save photos."
+      },
+      "config": {
+          "googleMapsApiKey": "AIzaSyDQ0q81IbLrbny4iuw7DCyBEzjDUa5M4v4"
       }
     },
     "android": {
@@ -36,25 +28,16 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.nadhifrontend",
       "permissions": [
         "CAMERA",
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
         "READ_MEDIA_IMAGES",
         "WRITE_EXTERNAL_STORAGE"
-      ],
-      "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyDQ0q81IbLrbny4iuw7DCyBEzjDUa5M4v4"
-        }
-      },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.nadhifrontend",
-      "notification": {
-        "icon": "./assets/images/android-icon-monochrome.png",
-        "color": "#06b6d4"
-      }
+      ]
     },
     "web": {
       "output": "static",
@@ -63,28 +46,6 @@
     },
     "plugins": [
       "expo-router",
-      [
-        "expo-notifications",
-        {
-          "icon": "./assets/images/android-icon-monochrome.png",
-          "color": "#06b6d4",
-          "sounds": [],
-          "mode": "production",
-          "iosDisplayInForeground": true
-        }
-      ],
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
-          "dark": {
-            "backgroundColor": "#000000"
-          }
-        }
-      ],
       [
         "expo-camera",
         {
@@ -109,6 +70,18 @@
       }
     ],
       [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
+        }
+      ],
+      [
         "expo-font",
         {
           "fonts": [
@@ -118,11 +91,7 @@
       ]
     ],
     "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
-    },
-    "notification": {
-      "icon": "./assets/images/android-icon-monochrome.png"
+      "typedRoutes": true
     },
     "extra": {
       "router": {},
