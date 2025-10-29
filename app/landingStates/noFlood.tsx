@@ -95,7 +95,20 @@ export default function NoFlood({setFloodLevel}: {setFloodLevel: (level: string)
                     </View>
                 </Pressable>
 
-                <Text className="text-base text-gray-400 text-center mb-2.5" onPress={() => setFloodLevel("yesFlood")}>Simulate Flooding</Text>
+                {/* Navigation Button */}
+                <Pressable onPress={() => setFloodLevel("possibleFlood")}>
+                    <View 
+                        className="px-6 py-4 rounded-2xl border border-yellow-400/50"
+                        style={{ backgroundColor: 'rgba(234, 179, 8, 0.1)' }}
+                    >
+                        <Text className="text-yellow-400 text-base font-semibold text-center">
+                            → Next Stage: Possible Flood
+                        </Text>
+                        <Text className="text-gray-400 text-sm text-center mt-1">
+                            Test possible flood scenario
+                        </Text>
+                    </View>
+                </Pressable>
             </View>
         </Page>
     );
