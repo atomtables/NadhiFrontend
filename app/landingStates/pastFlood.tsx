@@ -5,10 +5,10 @@ import Icon from '@/app/components/Icon';
 import NavigationBar from '@/app/components/NavigationBar';
 import Page from '@/app/components/Page';
 import PostFloodAssessmentOverlay from '@/app/components/PostFloodAssessmentOverlay';
-import { calculateRegionalStats, PostFloodAssessment } from '@/app/components/regionalStats';
+import { calculateRegionalStats } from '@/app/components/regionalStats';
 import StatusBox from '@/app/components/StatusBox';
 import VolunteerFormOverlay from '@/app/components/VolunteerFormOverlay';
-import postFloodAssessmentsData from '@/app/static/data/postFloodAssessments.json';
+import { getPostFloodAssessments } from '@/app/services/assessmentService';
 import donate from "@/assets/icons/donate.png";
 import volunteer from "@/assets/icons/volunteer.png";
 import { Location } from '@/types/types';
@@ -29,12 +29,13 @@ export default function PastFlood({setFloodLevel}: {setFloodLevel: (level: strin
 
     // Get user location and calculate regional stats on mount
     useEffect(() => {
-        getCurrentLocation().then(location => {
+        getCurrentLocation().then(async location => {
             if (location) {
                 setUserLocation(location);
+                const assessments = await getPostFloodAssessments();
                 const stats = calculateRegionalStats(
                     location,
-                    postFloodAssessmentsData as PostFloodAssessment[]
+                    assessments
                 );
                 setAvgDamage(stats.avgDamage);
                 setAvgShelter(stats.avgShelter);

@@ -1,11 +1,13 @@
 import CameraOverlay from '@/app/components/CameraOverlay';
 import Overlay from '@/app/components/Overlay';
+import { submitVolunteerRequest } from '@/app/services/volunteerService';
 import example1 from '@/assets/generic/example1.webp';
 import example2 from '@/assets/generic/example2.jpg';
 import closeIcon from "@/assets/icons/close.png";
 import { useState } from 'react';
 import { Image, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import CloseOverlayButton from './CloseOverlayButton';
+import getCurrentLocation from './getLocation';
 
 type FormStage = 'initial' | 'need-danger' | 'need-medical' | 'need-details' | 'need-photo' | 'need-confirm' | 
                  'help-danger' | 'help-medical' | 'help-confirm' | 'help-browse' | 'emergency-exit' | 'complete';
@@ -97,34 +99,40 @@ export default function VolunteerFormOverlay({ isVisible, closeOverlay }: {isVis
     };
 
     const handleSubmitRequest = async () => {
-        // Create JSON object with all collected data
-        const requestData = {
-            type: 'need-help',
-            timestamp: new Date().toISOString(),
-            userType: userType,
-            helpNeeded: helpNeeded,
-            photoUri: photoUri,
-            photoTaken: photoTaken,
-            safetyChecks: {
-                areaSafe: true, // They passed the danger check
-                noMedicalEmergency: true // They passed the medical check
-            },
-            locationSharingAgreed: true,
-            status: 'submitted'
-        };
+        try {
+            // Get user location
+            const location = await getCurrentLocation();
+            
+            if (!location) {
+                console.error('Could not get user location');
+                // Still move to complete stage
+                setStage('complete');
+                return;
+            }
 
-        // Log the data for now (will be sent to backend later)
-        console.log('Help Request Submitted:', JSON.stringify(requestData, null, 2));
+            // Submit request to backend
+            const result = await submitVolunteerRequest(
+                {
+                    type: 'need-help',
+                    userType: userType || 'unknown',
+                    helpDescription: helpNeeded,
+                    imageTaken: photoTaken,
+                    areaSafe: true, // They passed the danger check
+                    noMedicalEmergency: true, // They passed the medical check
+                    location: `${location.latitude}, ${location.longitude}`, // Format location string
+                },
+                location.latitude,
+                location.longitude,
+                null // TODO: Convert photoUri to File if needed
+            );
 
-        // TODO: Send requestData to backend API
-        // await fetch('/api/requests', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(requestData)
-        // });
-
-        // Move to completion stage
-        setStage('complete');
+            console.log('Volunteer request submitted successfully:', result);
+            setStage('complete');
+        } catch (error) {
+            console.error('Error submitting volunteer request:', error);
+            // Still move to complete stage even on error for now
+            setStage('complete');
+        }
     };
 
     const renderStage = () => {

@@ -1,6 +1,6 @@
 import CameraOverlay from '@/app/components/CameraOverlay';
 import Overlay from '@/app/components/Overlay';
-import postFloodAssessmentsData from '@/app/static/data/postFloodAssessments.json';
+import { getPostFloodAssessments, submitAssessment } from '@/app/services/assessmentService';
 import closeIcon from "@/assets/icons/close.png";
 import { Location } from '@/types/types';
 import { useEffect, useState } from 'react';
@@ -8,7 +8,7 @@ import { Image, Pressable, ScrollView, Text, View } from 'react-native';
 import CloseOverlayButton from './CloseOverlayButton';
 import DataBox from './DataBox';
 import getCurrentLocation from './getLocation';
-import { calculateRegionalStats, PostFloodAssessment, RegionalStats } from './regionalStats';
+import { calculateRegionalStats, RegionalStats } from './regionalStats';
 
 type AssessmentStage = 'intro' | 'photo' | 'damage' | 'shelter' | 'preparedness' | 'complete';
 
@@ -35,14 +35,15 @@ export default function PostFloodAssessmentOverlay({
     useEffect(() => {
         if (isVisible && !userLocation) {
             console.log('Fetching user location...');
-            getCurrentLocation().then(location => {
+            getCurrentLocation().then(async location => {
                 if (location) {
                     console.log('User location:', location);
                     setUserLocation(location);
                     // Calculate regional statistics
+                    const assessments = await getPostFloodAssessments();
                     const stats = calculateRegionalStats(
                         location,
-                        postFloodAssessmentsData as PostFloodAssessment[]
+                        assessments
                     );
                     console.log('Regional stats:', stats);
                     setRegionalStats(stats);
@@ -77,32 +78,29 @@ export default function PostFloodAssessmentOverlay({
         setCameraVisible(false);
     };
 
-    const handleSubmit = () => {
-        // Create form data object matching backend format
-        const assessmentData = {
-            file: photoUri, // In real implementation, this would be the actual file/blob
-            q1: damageRating?.toString() || "0", // Damage caused (1-10)
-            q2: shelterRating?.toString() || "0", // Ability to find shelter (1-10)
-            q3: preparednessRating?.toString() || "0", // Preparedness for flood (1-10)
-            latitude: userLocation?.latitude || 0,
-            longitude: userLocation?.longitude || 0,
-            timestamp: new Date().toISOString(),
-            photoTaken: photoTaken
-        };
+    const handleSubmit = async () => {
+        try {
+            // Submit assessment to backend
+            const assessmentResult = await submitAssessment(
+                {
+                    q1: damageRating?.toString() || "0",
+                    q2: shelterRating?.toString() || "0",
+                    q3: preparednessRating?.toString() || "0",
+                    latitude: userLocation?.latitude,
+                    longitude: userLocation?.longitude,
+                },
+                // Note: photoUri is a string, need to convert to File for actual upload
+                // For now, we'll skip the image upload in the API call
+                null
+            );
 
-        console.log('Post-Flood Assessment Submitted:', JSON.stringify(assessmentData, null, 2));
-
-        // TODO: Send to backend
-        // const formData = new FormData();
-        // formData.append('file', photoFile);
-        // formData.append('q1', damageRating.toString());
-        // formData.append('q2', shelterRating.toString());
-        // formData.append('q3', preparednessRating.toString());
-        // formData.append('latitude', userLocation.latitude.toString());
-        // formData.append('longitude', userLocation.longitude.toString());
-        // await fetch('/api/assessment', { method: 'POST', body: formData });
-
-        setStage('complete');
+            console.log('Assessment submitted successfully:', assessmentResult);
+            setStage('complete');
+        } catch (error) {
+            console.error('Error submitting assessment:', error);
+            // Still move to complete stage even on error for now
+            setStage('complete');
+        }
     };
 
     const RatingButton = ({ value, selected, onPress }: { value: number, selected: boolean, onPress: () => void }) => (
