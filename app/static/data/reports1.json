@@ -1,0 +1,23 @@
+{
+  "locations": [
+    { "latitude": 40.9176, "longitude": -74.1718, "weight": 3, "altitude": 12.5 },
+
+    
+    { "latitude": 40.9067, "longitude": -74.1612, "weight": 2, "altitude": 8.4 },
+    { "latitude": 40.9234, "longitude": -74.1845, "weight": 2, "altitude": 9.7 },
+    { "latitude": 40.9312, "longitude": -74.1734, "weight": 2, "altitude": 7.2 },
+    { "latitude": 40.8978, "longitude": -74.1567, "weight": 2, "altitude": 10.1 },
+    { "latitude": 40.7512, "longitude": -74.0189, "weight": 2, "altitude": 8.9 },
+    { "latitude": 40.7334, "longitude": -74.0412, "weight": 2, "altitude": 9.3 },
+    { "latitude": 40.7567, "longitude": -74.0234, "weight": 2, "altitude": 7.8 },
+
+    
+    { "latitude": 40.9423, "longitude": -74.1456, "weight": 1, "altitude": 4.2 },
+    { "latitude": 40.8867, "longitude": -74.1423, "weight": 1, "altitude": 5.8 },
+    { "latitude": 40.9512, "longitude": -74.1912, "weight": 1, "altitude": 3.5 },
+    { "latitude": 40.8734, "longitude": -74.1289, "weight": 1, "altitude": 6.3 },
+    { "latitude": 40.7767, "longitude": -74.0089, "weight": 1, "altitude": 4.7 },
+    { "latitude": 40.7234, "longitude": -74.0634, "weight": 1, "altitude": 5.4 },
+    { "latitude": 40.7634, "longitude": -73.9923, "weight": 1, "altitude": 3.9 }
+  ]
+}

@@ -1,0 +1,317 @@
+[
+  {
+    "id": 1,
+    "latitude": 40.5187,
+    "longitude": -74.4121,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T10:30:00.000Z"
+  },
+  {
+    "id": 2,
+    "latitude": 40.5220,
+    "longitude": -74.4180,
+    "damageRating": 8,
+    "shelterAvailability": 4,
+    "preparednessRating": 3,
+    "timestamp": "2025-10-28T11:15:00.000Z"
+  },
+  {
+    "id": 3,
+    "latitude": 40.5150,
+    "longitude": -74.4050,
+    "damageRating": 6,
+    "shelterAvailability": 6,
+    "preparednessRating": 5,
+    "timestamp": "2025-10-28T12:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "latitude": 40.5190,
+    "longitude": -74.4130,
+    "damageRating": 9,
+    "shelterAvailability": 3,
+    "preparednessRating": 2,
+    "timestamp": "2025-10-28T12:45:00.000Z"
+  },
+  {
+    "id": 5,
+    "latitude": 40.5170,
+    "longitude": -74.4110,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T13:30:00.000Z"
+  },
+  {
+    "id": 6,
+    "latitude": 40.5210,
+    "longitude": -74.4090,
+    "damageRating": 5,
+    "shelterAvailability": 7,
+    "preparednessRating": 6,
+    "timestamp": "2025-10-28T14:00:00.000Z"
+  },
+  {
+    "id": 7,
+    "latitude": 40.5180,
+    "longitude": -74.4140,
+    "damageRating": 8,
+    "shelterAvailability": 4,
+    "preparednessRating": 3,
+    "timestamp": "2025-10-28T14:30:00.000Z"
+  },
+  {
+    "id": 8,
+    "latitude": 40.5140,
+    "longitude": -74.4070,
+    "damageRating": 6,
+    "shelterAvailability": 6,
+    "preparednessRating": 5,
+    "timestamp": "2025-10-28T15:00:00.000Z"
+  },
+  {
+    "id": 9,
+    "latitude": 40.5200,
+    "longitude": -74.4160,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T15:30:00.000Z"
+  },
+  {
+    "id": 10,
+    "latitude": 40.5160,
+    "longitude": -74.4100,
+    "damageRating": 8,
+    "shelterAvailability": 4,
+    "preparednessRating": 3,
+    "timestamp": "2025-10-28T16:00:00.000Z"
+  },
+  {
+    "id": 11,
+    "latitude": 40.5280,
+    "longitude": -74.4200,
+    "damageRating": 4,
+    "shelterAvailability": 8,
+    "preparednessRating": 7,
+    "timestamp": "2025-10-28T16:30:00.000Z"
+  },
+  {
+    "id": 12,
+    "latitude": 40.5100,
+    "longitude": -74.4030,
+    "damageRating": 9,
+    "shelterAvailability": 2,
+    "preparednessRating": 2,
+    "timestamp": "2025-10-28T17:00:00.000Z"
+  },
+  {
+    "id": 13,
+    "latitude": 40.5240,
+    "longitude": -74.4080,
+    "damageRating": 5,
+    "shelterAvailability": 7,
+    "preparednessRating": 6,
+    "timestamp": "2025-10-28T17:30:00.000Z"
+  },
+  {
+    "id": 14,
+    "latitude": 40.5230,
+    "longitude": -74.4150,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T18:00:00.000Z"
+  },
+  {
+    "id": 15,
+    "latitude": 40.5130,
+    "longitude": -74.4060,
+    "damageRating": 6,
+    "shelterAvailability": 6,
+    "preparednessRating": 5,
+    "timestamp": "2025-10-28T18:30:00.000Z"
+  },
+  {
+    "id": 16,
+    "latitude": 40.5260,
+    "longitude": -74.4190,
+    "damageRating": 5,
+    "shelterAvailability": 7,
+    "preparednessRating": 6,
+    "timestamp": "2025-10-28T19:00:00.000Z"
+  },
+  {
+    "id": 17,
+    "latitude": 40.5110,
+    "longitude": -74.4040,
+    "damageRating": 8,
+    "shelterAvailability": 3,
+    "preparednessRating": 3,
+    "timestamp": "2025-10-28T19:30:00.000Z"
+  },
+  {
+    "id": 18,
+    "latitude": 40.5250,
+    "longitude": -74.4100,
+    "damageRating": 6,
+    "shelterAvailability": 6,
+    "preparednessRating": 5,
+    "timestamp": "2025-10-28T20:00:00.000Z"
+  },
+  {
+    "id": 19,
+    "latitude": 40.5195,
+    "longitude": -74.4125,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T20:30:00.000Z"
+  },
+  {
+    "id": 20,
+    "latitude": 40.5175,
+    "longitude": -74.4095,
+    "damageRating": 6,
+    "shelterAvailability": 6,
+    "preparednessRating": 5,
+    "timestamp": "2025-10-28T21:00:00.000Z"
+  },
+  {
+    "id": 100,
+    "latitude": 28.5383,
+    "longitude": -81.3792,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T10:30:00.000Z"
+  },
+  {
+    "id": 200,
+    "latitude": 28.5450,
+    "longitude": -81.3850,
+    "damageRating": 8,
+    "shelterAvailability": 4,
+    "preparednessRating": 3,
+    "timestamp": "2025-10-28T11:15:00.000Z"
+  },
+  {
+    "id": 300,
+    "latitude": 28.5320,
+    "longitude": -81.3720,
+    "damageRating": 6,
+    "shelterAvailability": 6,
+    "preparednessRating": 5,
+    "timestamp": "2025-10-28T12:00:00.000Z"
+  },
+  {
+    "id": 400,
+    "latitude": 28.5400,
+    "longitude": -81.3800,
+    "damageRating": 9,
+    "shelterAvailability": 3,
+    "preparednessRating": 2,
+    "timestamp": "2025-10-28T12:45:00.000Z"
+  },
+  {
+    "id": 500,
+    "latitude": 28.5360,
+    "longitude": -81.3780,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T13:30:00.000Z"
+  },
+  {
+    "id": 600,
+    "latitude": 28.5420,
+    "longitude": -81.3760,
+    "damageRating": 5,
+    "shelterAvailability": 7,
+    "preparednessRating": 6,
+    "timestamp": "2025-10-28T14:00:00.000Z"
+  },
+  {
+    "id": 700,
+    "latitude": 28.5390,
+    "longitude": -81.3810,
+    "damageRating": 8,
+    "shelterAvailability": 4,
+    "preparednessRating": 3,
+    "timestamp": "2025-10-28T14:30:00.000Z"
+  },
+  {
+    "id": 800,
+    "latitude": 28.5340,
+    "longitude": -81.3740,
+    "damageRating": 6,
+    "shelterAvailability": 6,
+    "preparednessRating": 5,
+    "timestamp": "2025-10-28T15:00:00.000Z"
+  },
+  {
+    "id": 900,
+    "latitude": 28.5410,
+    "longitude": -81.3830,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T15:30:00.000Z"
+  },
+  {
+    "id": 1000,
+    "latitude": 28.5370,
+    "longitude": -81.3770,
+    "damageRating": 8,
+    "shelterAvailability": 4,
+    "preparednessRating": 3,
+    "timestamp": "2025-10-28T16:00:00.000Z"
+  },
+  {
+    "id": 1100,
+    "latitude": 28.5600,
+    "longitude": -81.3900,
+    "damageRating": 4,
+    "shelterAvailability": 8,
+    "preparednessRating": 7,
+    "timestamp": "2025-10-28T16:30:00.000Z"
+  },
+  {
+    "id": 1200,
+    "latitude": 28.5200,
+    "longitude": -81.3650,
+    "damageRating": 9,
+    "shelterAvailability": 2,
+    "preparednessRating": 2,
+    "timestamp": "2025-10-28T17:00:00.000Z"
+  },
+  {
+    "id": 1300,
+    "latitude": 28.5500,
+    "longitude": -81.3700,
+    "damageRating": 5,
+    "shelterAvailability": 7,
+    "preparednessRating": 6,
+    "timestamp": "2025-10-28T17:30:00.000Z"
+  },
+  {
+    "id": 1400,
+    "latitude": 28.5430,
+    "longitude": -81.3820,
+    "damageRating": 7,
+    "shelterAvailability": 5,
+    "preparednessRating": 4,
+    "timestamp": "2025-10-28T18:00:00.000Z"
+  },
+  {
+    "id": 1500,
+    "latitude": 28.5350,
+    "longitude": -81.3750,
+    "damageRating": 6,
+    "shelterAvailability": 6,
+    "preparednessRating": 5,
+    "timestamp": "2025-10-28T18:30:00.000Z"
+  }
+]
